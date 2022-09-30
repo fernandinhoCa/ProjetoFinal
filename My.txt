@@ -1,0 +1,49 @@
+CREATE DATABASE ProjetoIntegrador;
+USE ProjetoIntegrador;
+
+CREATE TABLE Jogo(
+id int auto_increment primary key not null,
+titulo varchar(45),
+descricao text,
+preco decimal(15,2) not null,
+numDias int not null,
+categoria varchar(45) not null,
+memoria int not null,
+tipo char(1) not null
+);
+
+DROP TABLE jogo;
+SELECT * FROM jogo;
+
+INSERT INTO jogo (titulo, descricao, preco, numDias, categoria, memoria, tipo) VALUES ("VELOZES", "VELOZES E FURIOSOS", "10", "2", "J", "1", "J");
+INSERT INTO jogo (titulo, descricao, preco, numDias, categoria, memoria, tipo) VALUES ("DARK1", "ALEMANHA", "10", "2", "J", "1", "J");
+
+CREATE TABLE categoria(
+id int(11) primary key auto_increment not null,
+nome varchar(100) null,
+tipo char(1) null
+);
+
+DROP TABLE categoria;
+SELECT * FROM categoria;
+
+INSERT INTO categoria (nome, tipo) VALUES ("ACAO", "J");
+INSERT INTO categoria (nome, tipo) VALUES ("COMEDIA", "F");
+
+create table filme(
+id int auto_increment primary key not null,
+titulo varchar(45) null,
+descricao text,
+preco decimal(15,2) null,
+numeroDias int(11) null,
+categoria varchar(45) not null,
+categoria_id int(11) null,
+diretor varchar(45) null,
+duracao int(11) null
+);
+
+insert into filme(titulo,descricao,preco,numeroDias,categoria,categoria_id,diretor,duracao)
+values ('LOU','Suspense baseado em historia real', '1','14','F','1','MAIKON','2');
+
+insert into filme(titulo,descricao,preco,numeroDias,categoria,categoria_id,diretor,duracao)
+values ('O telefone','Suspense com poucos sustos', '1','14','F','1','MAIKON','2');
